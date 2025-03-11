@@ -3,7 +3,6 @@
 
 ## Integrantes
 
-Nombre completo | Código
 Diego Fernando Moreno Martinez | 2159838
 Lina Maria Muñoz Vasquez | 2159849
 
