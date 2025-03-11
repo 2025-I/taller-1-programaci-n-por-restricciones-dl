@@ -4,9 +4,8 @@
 ## Integrantes
 
 Nombre completo | Código
-Estudiante1 | 123456
-Estudiante2 | 123457
-Estudiante3 | 123458
+Diego Fernando Moreno Martinez | 2159838
+Lina Maria Muñoz Vasquez | 2159849
 
 ## Descripción del taller
 
