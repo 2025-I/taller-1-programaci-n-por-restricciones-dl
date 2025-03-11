@@ -1,0 +1,64 @@
+# Created by httpswww.toptal.comdevelopersgitignoreapivisualstudiocode,git,windows
+# Edit at httpswww.toptal.comdevelopersgitignoretemplates=visualstudiocode,git,windows
+
+### Git ###
+# Created by git for backups. To disable backups in Git
+# $ git config --global mergetool.keepBackup false
+.orig
+
+# Created by git when using merge tools for conflicts
+.BACKUP.
+.BASE.
+.LOCAL.
+.REMOTE.
+_BACKUP_.txt
+_BASE_.txt
+_LOCAL_.txt
+_REMOTE_.txt
+
+### VisualStudioCode ###
+.vscode
+!.vscodesettings.json
+!.vscodetasks.json
+!.vscodelaunch.json
+!.vscodeextensions.json
+!.vscode.code-snippets
+
+# Local History for Visual Studio Code
+.history
+
+# Built Visual Studio Code Extensions
+.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.dbencryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN
+
+# Windows Installer files
+.cab
+.msi
+.msix
+.msm
+.msp
+
+# Windows shortcuts
+.lnk
+
+# End of httpswww.toptal.comdevelopersgitignoreapivisualstudiocode,git,windows
