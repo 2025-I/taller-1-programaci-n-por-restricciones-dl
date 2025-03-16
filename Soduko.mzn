@@ -33,5 +33,8 @@ constraint forall (br in 0..2, bc in 0..2) (
 );
 
 solve satisfy;
+%%solve :: int_search([grid[r, c] | r in 1..9, c in 1..9], first_fail, indomain_min) satisfy; %Dominio más pequeño,Valor más pequeño 
+%%solve :: int_search([grid[r, c] | r in 1..9, c in 1..9], input_order, indomain_random) satisfy;%Orden del grid, Valor random.
+
 
 output [show(solution_grid[r, c]) ++ if c == 9 then "\n" else " " endif | r in 1..9, c in 1..9];
