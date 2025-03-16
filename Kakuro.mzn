@@ -2,7 +2,7 @@
 include "globals.mzn";
 
 %Dimensiones del Kakuro
-int: sizefila;
+int: sizefila; 
 int: sizecolumna;
 set of int: filas = 1..sizefila;
 set of int: columnas = 1..sizecolumna;
@@ -21,7 +21,7 @@ array[filas,columnas] of int: abajo;
 array[filasE,columnasE] of var 0..9: kakuro;
 
 %Restricciones
-%Llos limites del tablero deben ser 0
+%Los limites del tablero deben ser 0
 constraint forall(i in filasE)(kakuro [i,0] = 0);
 constraint forall(j in columnasE)(kakuro [0,j] = 0);
 constraint forall(i in filasE)(kakuro[i,sizecolumna+1] = 0);
@@ -31,7 +31,7 @@ constraint forall(j in columnasE)(kakuro[sizefila+1,j] = 0);
 constraint forall(i in filas, j in columnas)(if margen [i,j] = 1 then kakuro [i,j] = 0 else kakuro[i,j] != 0 endif);
 
 %Los numeros diferentes de cero, entre dos ceros, deben ser diferentes entre si
-constraint forall(i,k in filasE, j in columnasE where count(kakuro[1..k,j],0) <= 2) (if kakuro[i,j]=0 /\ kakuro[k,j]=0 then alldifferent_except_0(kakuro[i..k,j]) endif);
+constraint forall(i,k in filasE, j in columnasE where count(kakuro[i..k,j],0) <= 2) (if kakuro[i,j]=0 /\ kakuro[k,j]=0 then alldifferent_except_0(kakuro[i..k,j]) endif);
 
 constraint forall(i in filasE,j,k in columnasE where count(kakuro[i,j..k],0) <=2) (if kakuro[i,j]=0 /\ kakuro[i,k]=0 then alldifferent_except_0(kakuro[i,j..k]) endif);
 
@@ -42,5 +42,13 @@ constraint forall(i in filas, j in columnas, k in filasE where count(kakuro[i..k
 
 %Impresion del tablero resuelto.
 output[show([kakuro[i,j] | j in columnas]) ++ "\n" | i in filas];
+%Satisfacer restricciones
 solve::int_search(kakuro,first_fail,indomain_median) satisfy;
+
+%Maximizar la suma de los números en el tablero
+%solve maximize sum(i in filasE, j in columnasE)(kakuro[i,j]);
+
+%Minimizar la suma de los números en el tablero
+%solve minimize sum(i in filasE, j in columnasE)(kakuro[i,j]);
+
 
